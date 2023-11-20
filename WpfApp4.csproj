@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="bold-text-option.png" />
+    <None Remove="diskette.png" />
+    <None Remove="folder.png" />
+    <None Remove="italic.png" />
+    <None Remove="new-document.png" />
+    <None Remove="recycle.png" />
+    <None Remove="underline.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="bold-text-option.png" />
+    <Resource Include="diskette.png" />
+    <Resource Include="folder.png" />
+    <Resource Include="italic.png" />
+    <Resource Include="new-document.png" />
+    <Resource Include="recycle.png" />
+    <Resource Include="underline.png" />
+  </ItemGroup>
+
+</Project>
