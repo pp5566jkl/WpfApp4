@@ -18,6 +18,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.5.1" />
+    <PackageReference Include="HtmlRenderer.WPF" Version="1.5.0.6" />
+    <PackageReference Include="HtmlToXamlConverter" Version="1.0.5727.24510" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="bold-text-option.png" />
     <Resource Include="diskette.png" />
     <Resource Include="folder.png" />

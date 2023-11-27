@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:WpfApp4"
         mc:Ignorable="d"
         Title="MyDocumentViewer" Height="450" Width="800">
@@ -12,7 +13,7 @@
         <CommandBinding Command="ApplicationCommands.Save" Executed="SaveCommand_Executed" />
     </Window.CommandBindings>
     <DockPanel>
-        <ToolBarTray Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" DockPanel.Dock="Top" Background="#FFE3ECF6">
+        <ToolBarTray Height="40" Width="800" VerticalAlignment="Top" HorizontalAlignment="Left" DockPanel.Dock="Top" Background="#FFC7C5F3">
             <ToolBar Height="40" Width="181">
                 <Button x:Name="newButton" Command="ApplicationCommands.New" Width="35" Height="35">
                     <Image Width="38" Height="27" Source="/new-document.png"  />
@@ -23,11 +24,11 @@
                 <Button x:Name="saveButton" Command="ApplicationCommands.Save" Width="35" Height="35">
                     <Image Width="33" Height="28" Source="/diskette.png" />
                 </Button>
-                <Button x:Name="clearButton" Width="35" Height="35">
+                <Button x:Name="clearButton" Width="35" Height="35" Click="clearButton_Click">
                     <Image Width="58" Height="30" Source="/recycle.png" RenderTransformOrigin="0.67,0.502" />
                 </Button>
             </ToolBar>
-            <ToolBar Width="143">
+            <ToolBar Height="40" Width="550" Background="#FFC4D8ED">
                 <ToggleButton x:Name="boldButton" Command="EditingCommands.ToggleBold" Height="35" Width="35">
                     <Image Width="35" Height="27" Source="/bold-text-option.png"  />
                 </ToggleButton>
@@ -37,6 +38,10 @@
                 <ToggleButton x:Name="underlineButton" Command="EditingCommands.ToggleUnderline" Height="35" Width="35">
                     <Image Width="37" Height="26" Source="/underline.png" />
                 </ToggleButton>
+                <xctk:ColorPicker x:Name="fontColorPicker" Height="35" Width="100" VerticalAlignment="Center" HorizontalAlignment="left" DisplayColorAndName="True" SelectedColorChanged="fontColorPicker_SelectedColorChanged"/>
+                <ComboBox x:Name="fontFamilyComboBox" Height="35" Width="120" VerticalAlignment="Center" HorizontalAlignment="Left" BorderBrush="#FFF77F7F" SelectionChanged="fontFamilyComboBox_SelectionChanged" />
+                <ComboBox x:Name="fontSizeComboBox" Height="35" Width="50" VerticalAlignment="Center" HorizontalAlignment="Left" Background="#FFEDF9E2" SelectionChanged="fontSizeComboBox_SelectionChanged" />
+                <xctk:ColorPicker x:Name="BackgroundPicker" Height="35" Width="80" VerticalAlignment="Center" HorizontalAlignment="left" DisplayColorAndName="True" SelectedColorChanged="BackgroundPicker_SelectedColorChanged" />
             </ToolBar>
         </ToolBarTray>
         <RichTextBox x:Name="rtbEditor" Background="#FFC2E8F5" SelectionChanged="rtbEditor_SelectionChanged" >
